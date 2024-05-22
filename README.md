@@ -39,5 +39,5 @@ Built with:
 
 Md Mohsin
 
-- GitHub @mohsinrony
+- [Md Mohsin](https://github.com/mohsinrony)
 - [LinkedIn](https://www.linkedin.com/in/md-mohsin-rony/)
