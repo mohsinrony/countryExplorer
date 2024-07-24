@@ -1,5 +1,7 @@
 # CountryExplorer
 
+A React app with Redux, integrating OpenWeatherMap API, adding Firebase authentication, setting up routing with protected routes, and creating a detailed country page with search functionality.
+
 Embark on an exhilarating adventure with CountryExplorer! Dive into the vibrant world of flags and discover the rich diversity of global symbols. Test your flag knowledge and expand your horizons with our extensive collection of over 200 flags representing diverse cultures and nations. Whether you're a seasoned flag enthusiast or a curious explorer, CountryExplorer offers an immersive experience like no other. Start your exploration today and let the flags of the world inspire and captivate you!
 
 ## Technologies used
