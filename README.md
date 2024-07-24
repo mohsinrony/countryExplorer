@@ -36,6 +36,7 @@ Built with:
 - [React Bootstrap Documentation](https://react-bootstrap.netlify.app/docs/getting-started/introduction)
 - [Vite Documentation](https://vitejs.dev/guide/)
 - [Redux Documentation](https://redux.js.org/introduction/getting-started)
+- [Firebase Documentation](https://firebase.google.com/docs/firestore/query-data/queries)
 
 ## Authors and acknowledgment
 
