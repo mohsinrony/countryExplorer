@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCountries } from '../reduxStore/countriesSlice'
 
@@ -6,21 +6,33 @@ import { fetchCountries } from '../reduxStore/countriesSlice'
 const Countries = () => {
   const dispatch = useDispatch()
   const { countries, isLoading } = useSelector((state) => state.countries)
+  const {searchTerm, setSearchTerm} = useState("");
 
   useEffect(() => {
     dispatch(fetchCountries())
   }, [dispatch])
 
- 
+ const filteredCountries = countries.filter((country) => {
+    return country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
+  } );
+
   return (
     <div>
       <h1>Countries</h1>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       {isLoading ? (
        <div>Loading...</div>
       ) : (
         <ul>
-          {countries.map((country) => (
-            <li key={country.name}>{country.name.common}</li>
+          {filteredCountries.map((country) => (
+            <li key={country.cca2}>
+              {country.name.common}
+            </li>
           ))}
         </ul>
       )}
