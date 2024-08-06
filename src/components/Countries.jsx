@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { initializeCountries } from '../reduxStore/countriesSlice'
+import { Link } from 'react-router-dom'
 
 
 const Countries = () => {
@@ -31,7 +32,9 @@ const Countries = () => {
         <ul>
           {filteredCountries.map((country) => (
             <li key={country.cca2}>
+              <Link to={`/country/${country.cca2}`}>
               {country.name.common}
+              </Link>
             </li>
           ))}
         </ul>
