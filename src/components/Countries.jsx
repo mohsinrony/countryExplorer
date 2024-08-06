@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchCountries } from '../reduxStore/countriesSlice'
+import { initializeCountries } from '../reduxStore/countriesSlice'
 
 
 const Countries = () => {
@@ -9,7 +9,7 @@ const Countries = () => {
   const {searchTerm, setSearchTerm} = useState("");
 
   useEffect(() => {
-    dispatch(fetchCountries())
+    dispatch(initializeCountries())
   }, [dispatch])
 
  const filteredCountries = countries.filter((country) => {
