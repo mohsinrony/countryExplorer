@@ -1,9 +1,9 @@
-import fetchCountries from "../service/countries";
+import { getAllCountries } from "../service/countries";
 import { createSlice } from "@reduxjs/toolkit";
 
 export const initializeCountries = () => {
   return async (dispatch) => {
-    const countries = await fetchCountries().getAll();
+    const countries = await getAllCountries().getAll();
     dispatch(getCountries(countries));
     setTimeout(() => {
       dispatch(isLoading(false)); // Simulate loading time
