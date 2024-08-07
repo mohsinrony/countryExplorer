@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import store from "./reduxStore/store";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import CountryDetail from "./components/CountryDetail";
+import Header from "./components/Header";
+
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<ProtectedRoute component={Countries} />} />
         <Route path="/country/:name" element={<ProtectedRoute component={CountryDetail}/>} />
