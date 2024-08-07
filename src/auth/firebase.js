@@ -24,7 +24,7 @@ const auth = getAuth(app);
 // Here we get access to the Firestore database
 const db = getFirestore(app);
 
-const createUserWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
@@ -43,7 +43,7 @@ const createUserWithEmailAndPassword = async (name, email, password) => {
   }
 };
 
-const signInWithEmailAndPassword = async (email, password) => {
+const loginWithEmailAndPassword = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(
       auth,
@@ -77,4 +77,4 @@ export const getNameOfUser = async (user) => {
   }
 };
 
-export { auth, db, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+export { auth, db, registerWithEmailAndPassword, loginWithEmailAndPassword };
