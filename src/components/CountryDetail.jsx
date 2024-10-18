@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 import {Button, Col, Container, Row, Image, Spinner} from 'react-bootstrap';
 
 
@@ -9,10 +9,11 @@ const CountryDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const country = location.state.country;
-  const [isLoading, setIsLoading] = useState(true);
+ 
   const [weather, setWeather] = useState("");
   const [error, setError] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
+  
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`)
     .catch((error) => {
